@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// [START classroom_create_course]
 package main
 
 import (
 	"context"
 	"fmt"
 	"golang.org/x/oauth2/google"
-	"log"
-	"net/http"
-
 	"google.golang.org/api/classroom/v1"
 	"google.golang.org/api/option"
+	"log"
+	"net/http"
 )
 
 func createCourse(client *http.Client) {
@@ -33,7 +33,6 @@ func createCourse(client *http.Client) {
 	if err != nil {
 		log.Fatalf("Unable to create classroom Client %v", err)
 	}
-	// [START classroom_create_course]
 	c := &classroom.Course{
 		Name:               "10th Grade Biology",
 		Section:            "Period 2",
@@ -48,7 +47,6 @@ func createCourse(client *http.Client) {
 		log.Fatalf("Course unable to be created %v", err)
 	}
 	fmt.Printf("Created course: %v", course.Id)
-	// [END classroom_create_course]
 }
 func main() {
 	ctx := context.Background()
@@ -63,3 +61,5 @@ func main() {
 	}
 	createCourse(client)
 }
+
+// [END classroom_create_course]

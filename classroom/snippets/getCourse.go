@@ -14,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// [START classroom_get_course]
 package main
 
 import (
@@ -28,7 +29,6 @@ import (
 )
 
 func getCourse(client *http.Client) {
-	// [START classroom_get_course]
 	ctx := context.Background()
 	srv, err := classroom.NewService(ctx, option.WithHTTPClient(client))
 	if err != nil {
@@ -40,7 +40,6 @@ func getCourse(client *http.Client) {
 		log.Fatalf("Course unable to be retrieved %v", err)
 	}
 	fmt.Printf("Course with ID %v found.", course.Id)
-	// [END classroom_get_course]
 }
 
 func main() {
@@ -56,3 +55,5 @@ func main() {
 	}
 	getCourse(client)
 }
+
+// [END classroom_get_course]
