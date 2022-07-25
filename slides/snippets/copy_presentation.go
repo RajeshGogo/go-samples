@@ -56,4 +56,4 @@ func copyPresentation(id string, title string) string {
 	return presentationCopyId
 }
 
-// [END slides_create_presentation]
+// [END slides_copy_presentation]
